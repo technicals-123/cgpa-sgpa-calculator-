@@ -1,0 +1,77 @@
+#include <stdio.h>
+struct student
+{
+    char name[20];
+     int credit;
+     int creditscore;
+};
+ 
+ int main()
+{ 
+int n,i=0;
+float m;
+int total=0;
+int cs;
+float sgpa;
+int sum=0,ts=0;
+struct student s[100];
+ printf("enter the credit=4 for theory subjects and credit=2 for practical subject.\n");
+
+printf("enter the no. of subjects:\n");
+ scanf("%d",&n);
+ 
+for(i=0;i<n;i++)
+ {
+ printf("\nenter subject:");
+    scanf("%s",s[i].name);
+ printf("enter credit:\t");
+    scanf("%d", &s[i].credit);
+ printf("enter marks:\t");
+    scanf("%f",&m);
+if(m<=100&&m>=90)
+{
+    cs=10;
+    printf("credit score=%d",cs);
+}
+ else if(m<=89&&m>=80)
+ {cs=9;
+ printf("credit score=%d",cs);
+ }
+ else if(m<=79&&m>=70)
+ {cs=8;
+ printf("credit score=%d",cs);
+ }
+ else if(m<=69&&m>=60)
+ {cs=7;
+ printf("credit score=%d",cs);
+ }
+ else if(m<=59&&m>=50)
+ {cs=6;
+ printf("credit score=%d",cs);
+ }
+ else if(m<=49&&m>=40)
+ {cs=5;
+ printf("credit score=%d",cs);
+ }
+ else if(m<=49&&m>=40)
+ {cs=4;
+ printf("credit score=%d",cs);
+ }
+else
+{
+cs=0;
+printf("\n For marks less than 40, your credit score=%d",cs);
+}
+ s[i].creditscore = cs;
+ sum = sum + s[i].credit;
+ total=total + s[i].creditscore*s[i].credit;
+  }
+ sgpa=(float)total/(float)sum;
+ printf("\nsum of credit=%d",sum);
+printf("\ntotal credit=%d",total);
+  printf("\nsgpa=%f",sgpa);
+    return 0;
+}
+
+
+
